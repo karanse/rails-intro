@@ -1,0 +1,22 @@
+<h1>Contact Us</h1>
+<p>We like receiving emails!</p>
+<!-- app/views/pages/contact.html.erb -->
+<h2>Who do you contact to?</h2>
+<form action="/contact" method="get">
+  <label for="member">Please type a name..</label>
+  <input id ="member"
+  name="member"
+  type="text"
+  placeholder="Toni"
+  value="<%= params[:member]%>">
+  <input type="submit">
+</form>
+
+<h2>Meet our team</h2>
+<ol>
+<% @members.each do |member| %>
+  <li><%= member.capitalize %></li>
+  <% end %>
+</ol>
+
+<%= link_to("Back to Home", root_path) %>
